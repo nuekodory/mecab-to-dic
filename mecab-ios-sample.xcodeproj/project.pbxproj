@@ -26,6 +26,9 @@
 		44DD1BC22075DCE500FCEBA7 /* dicrc in Resources */ = {isa = PBXBuildFile; fileRef = 44DD1BB92075DCE500FCEBA7 /* dicrc */; };
 		44DD1BC32075DCE500FCEBA7 /* right-id.def in Resources */ = {isa = PBXBuildFile; fileRef = 44DD1BBA2075DCE500FCEBA7 /* right-id.def */; };
 		44DD1BC42075DCE500FCEBA7 /* char.bin in Resources */ = {isa = PBXBuildFile; fileRef = 44DD1BBB2075DCE500FCEBA7 /* char.bin */; };
+		6F77335523ADE6A500867428 /* TokenAttributer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77335423ADE6A500867428 /* TokenAttributer.swift */; };
+		6FE953E423908EC8000F7BAC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FE953E623908EC8000F7BAC /* Localizable.strings */; };
+		CB0878A4B9B57A5775895CD8 /* DictionalyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08775607723B864845D335 /* DictionalyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		440E7D2820748A190003882E /* mecab-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mecab-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		440E7D2820748A190003882E /* MeCab to dic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeCab to dic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440E7D2B20748A190003882E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		440E7D2D20748A190003882E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		440E7D3020748A190003882E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +83,11 @@
 		44DD1BB92075DCE500FCEBA7 /* dicrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dicrc; sourceTree = "<group>"; };
 		44DD1BBA2075DCE500FCEBA7 /* right-id.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "right-id.def"; sourceTree = "<group>"; };
 		44DD1BBB2075DCE500FCEBA7 /* char.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = char.bin; sourceTree = "<group>"; };
+		6F77335423ADE6A500867428 /* TokenAttributer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAttributer.swift; sourceTree = "<group>"; };
+		6FE953D9238FE5DD000F7BAC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		6FE953DA238FE5DD000F7BAC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6FE953E523908EC8000F7BAC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB08775607723B864845D335 /* DictionalyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionalyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +116,7 @@
 		440E7D2920748A190003882E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				440E7D2820748A190003882E /* mecab-ios-sample.app */,
+				440E7D2820748A190003882E /* MeCab to dic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +132,9 @@
 				440E7D3420748A1A0003882E /* LaunchScreen.storyboard */,
 				440E7D3220748A1A0003882E /* Assets.xcassets */,
 				440E7D3720748A1A0003882E /* Info.plist */,
+				CB08775607723B864845D335 /* DictionalyManager.swift */,
+				6FE953E623908EC8000F7BAC /* Localizable.strings */,
+				6F77335423ADE6A500867428 /* TokenAttributer.swift */,
 			);
 			path = "mecab-ios-sample";
 			sourceTree = "<group>";
@@ -196,7 +207,7 @@
 			);
 			name = "mecab-ios-sample";
 			productName = "mecab-ios-sample";
-			productReference = 440E7D2820748A190003882E /* mecab-ios-sample.app */;
+			productReference = 440E7D2820748A190003882E /* MeCab to dic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -222,6 +233,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 440E7D1F20748A190003882E;
 			productRefGroup = 440E7D2920748A190003882E /* Products */;
@@ -264,6 +276,7 @@
 				44DD1BBE2075DCE500FCEBA7 /* pos-id.def in Resources */,
 				440E7D3120748A190003882E /* Main.storyboard in Resources */,
 				44DD1BC12075DCE500FCEBA7 /* sys.dic in Resources */,
+				6FE953E423908EC8000F7BAC /* Localizable.strings in Resources */,
 				44DD1BBC2075DCE500FCEBA7 /* rewrite.def in Resources */,
 				44DD1BBF2075DCE500FCEBA7 /* matrix.bin in Resources */,
 				44DD1BBD2075DCE500FCEBA7 /* left-id.def in Resources */,
@@ -281,6 +294,8 @@
 				4499F19C2080483A00302A25 /* Tokenizer.swift in Sources */,
 				440E7D2C20748A190003882E /* AppDelegate.swift in Sources */,
 				4426E70F225B392200AA2420 /* Token.swift in Sources */,
+				CB0878A4B9B57A5775895CD8 /* DictionalyManager.swift in Sources */,
+				6F77335523ADE6A500867428 /* TokenAttributer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +314,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				440E7D3020748A190003882E /* Base */,
+				6FE953D9238FE5DD000F7BAC /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -307,8 +323,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				440E7D3520748A1A0003882E /* Base */,
+				6FE953DA238FE5DD000F7BAC /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6FE953E623908EC8000F7BAC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FE953E523908EC8000F7BAC /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -318,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -378,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -436,15 +463,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WNHYA375TJ;
+				DEVELOPMENT_TEAM = 8735X43ZMY;
 				INFOPLIST_FILE = "mecab-ios-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.landonepps.mecab-ios-sample-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sohzoh.mecab-ios-sample";
+				PRODUCT_NAME = "MeCab to dic";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -460,15 +487,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WNHYA375TJ;
+				DEVELOPMENT_TEAM = 8735X43ZMY;
 				INFOPLIST_FILE = "mecab-ios-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.landonepps.mecab-ios-sample-1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sohzoh.mecab-ios-sample";
+				PRODUCT_NAME = "MeCab to dic";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

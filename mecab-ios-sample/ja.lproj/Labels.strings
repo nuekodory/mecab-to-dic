@@ -5,3 +5,9 @@
   Created by 中村直紀 on 2019/11/28.
   Copyright © 2019 Landon Epps. All rights reserved.
 */
+
+"Reading:"          = "読み:";
+"Original Form:"    = "原型:";
+"Inflextion:"       = "活用形:";
+"Part of Speech:"   = "品詞:";
+",　"               = "、";

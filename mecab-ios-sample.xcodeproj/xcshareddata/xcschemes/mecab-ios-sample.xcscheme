@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "440E7D2720748A190003882E"
-               BuildableName = "mecab-ios-sample.app"
+               BuildableName = "MeCab to dic.app"
                BlueprintName = "mecab-ios-sample"
                ReferencedContainer = "container:mecab-ios-sample.xcodeproj">
             </BuildableReference>
@@ -27,24 +27,23 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "440E7D2720748A190003882E"
-            BuildableName = "mecab-ios-sample.app"
+            BuildableName = "MeCab to dic.app"
             BlueprintName = "mecab-ios-sample"
             ReferencedContainer = "container:mecab-ios-sample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "ja"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -56,13 +55,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "440E7D2720748A190003882E"
-            BuildableName = "mecab-ios-sample.app"
+            BuildableName = "MeCab to dic.app"
             BlueprintName = "mecab-ios-sample"
             ReferencedContainer = "container:mecab-ios-sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "440E7D2720748A190003882E"
-            BuildableName = "mecab-ios-sample.app"
+            BuildableName = "MeCab to dic.app"
             BlueprintName = "mecab-ios-sample"
             ReferencedContainer = "container:mecab-ios-sample.xcodeproj">
          </BuildableReference>

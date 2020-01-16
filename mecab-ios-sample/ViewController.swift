@@ -2,57 +2,79 @@
 //  ViewController.swift
 //  mecab-ios-sample
 //
-//  Created by Landon Epps on 2018/04/04.
-//  Copyright © 2018 Landon Epps. All rights reserved.
+//  Created by Naoki Nakamura on 2019/10/04.
+//  Copyright © 2019 Naoki Nakamura. Under MIT license.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+let dictionaryURL = "https://dict.sohzoh.com/"
+let dictionaryPart = "dict.sohzoh.com"
+
+
+class ViewController: UIViewController, UITextViewDelegate {
     
-    let tokenizer = Tokenizer()
+    lazy var tokenizer = Tokenizer()
+    let dictionaryManager = DictionaryManager()
+    var passToCheckDictionary = true
+    var lastTokens: [Token]? = nil
+    var lastTermsFound = Set<String>()
     
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var outputTextArea: UITextView!
     
+    let indentStyle = NSMutableParagraphStyle()
+    let defaultAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 20.0), ]
+    var surfaceAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 26.0)]
+    lazy var tokenAttributes = TokenAttributerOptions(surfaceAttributes: [:], defaultAttributes:[:])
+    
     @IBAction func tokenize() {
-        var outputText = ""
         if let text = inputField.text {
             // parse the text from inputField
-            let tokens = tokenizer.parse(text)
-            
-            // append information from each token
-            for token: Token in tokens {
-                // all tokens have a surface property (the exact substring)
-                outputText += "\(token.surface)\n"
-                
-                // but the other properties aren't required, so they're optional
-                if let reading = token.reading {
-                    outputText += "読み: \(reading)\n"
-                }
-                
-                if let originalForm = token.originalForm {
-                    outputText += "原形: \(originalForm)\n"
-                }
-                
-                if let inflection = token.inflection {
-                    outputText += "活用形: \(inflection)\n"
-                }
-                outputText += "品詞: \(token.partsOfSpeech.joined(separator: "、"))\n\n" // if there are no parts of speech, it's an empty array, not nil
-            }
+            lastTokens = tokenizer.parse(text)
         }
-        outputTextArea.text = outputText
         // hide the keyboard
         inputField.resignFirstResponder()
+        updateText()
+        dictionaryManager.searchTerms(tokens: lastTokens)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        outputTextArea.isSelectable = true
+        outputTextArea.isEditable = false
+        outputTextArea.delegate = self
+        
+        indentStyle.lineSpacing = 2.0
+        surfaceAttributes.merge([.paragraphStyle: indentStyle], uniquingKeysWith: { _, new in new })
+        tokenAttributes = TokenAttributerOptions(
+            surfaceAttributes: surfaceAttributes, defaultAttributes: defaultAttributes)
+
+        NotificationCenter.default.addObserver(forName: .termsFound, object: nil, queue: .main, using: { [weak self] notification in
+            guard let termsFound = notification.object as? Set<String> else { return }
+            self?.lastTermsFound = termsFound
+            self?.updateText()
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func updateText() {
+        guard let tokens = lastTokens else { return }
+        outputTextArea.attributedText = tokensToAttributedText(tokens: tokens, termsFound: lastTermsFound, attributes: tokenAttributes)
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        if (URL.pathComponents.contains(dictionaryPart)) {
+            let libraryViewController = UIReferenceLibraryViewController.init(term: URL.lastPathComponent)
+            self.present(libraryViewController, animated: true, completion: nil)
+        }
+        return false
+    }
 }
+
+
